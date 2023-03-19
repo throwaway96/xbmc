@@ -93,9 +93,6 @@ bool CDVDVideoCodecStarfish::Open(CDVDStreamInfo &hints, CDVDCodecOptions &optio
     CLog::Log(LOGERROR, "CDVDVideoCodecStarfish::Open - {}", "null size, cannot handle");
     goto FAIL;
   }
-  else if (!CServiceBroker::GetSettingsComponent()->GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USESTARFISH) &&
-           !CServiceBroker::GetSettingsComponent()->GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USESTARFISHSURFACE))
-    goto FAIL;
 
   CLog::Log(
       LOGDEBUG,

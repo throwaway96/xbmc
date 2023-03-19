@@ -393,9 +393,6 @@ void CSettingConditions::Initialize()
 #ifdef TARGET_ANDROID
   m_simpleConditions.emplace("has_mediacodec");
 #endif
-#ifdef TARGET_WEBOS
-  m_simpleConditions.emplace("has_starfish");
-#endif
 #ifdef TARGET_DARWIN
   m_simpleConditions.emplace("HasVTB");
 #endif
