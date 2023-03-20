@@ -28,6 +28,10 @@ endif
 ifeq ($(OS),linux)
 	cd $(PLATFORM); patch -p1 -i ../04-pthread.patch
 endif
+
+ifeq ($(TARGET_PLATFORM),webos)
+	cd $(PLATFORM); patch -p1 -i ../webos-no-gssapi.patch
+endif
 	cd $(PLATFORM)/build; $(CMAKE) $(PLUGIN_BUILD_FLAGS) -DWITH_SSL=OPENSSL -DWITH_UNIT_TESTS:BOOL=OFF -DWITH_EXTERNAL_ZLIB:BOOL=ON -DWITH_CURL:BOOL=OFF ..
 
 $(LIBDYLIB): $(PLATFORM)
